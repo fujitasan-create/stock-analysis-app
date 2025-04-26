@@ -1,0 +1,14 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <title>株価分析アプリ</title>
+        <link rel="stylesheet" href="{% static 'stockapp/style.css' %}">
+    </head>
+    <body>
+        <h1><a href="{% url 'stockapp:index' %}">株価分析アプリ</a></h1>
+        {% block body %}
+        {% endblock %}
+    </body>
+</html>

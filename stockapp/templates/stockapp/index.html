@@ -1,0 +1,9 @@
+{% extends "base/base.html" %}
+{% block body %}
+
+<div class="container">
+    <h1>株価分析アプリにようこそ</h1>
+    <h2>このサイトでは、株価の単純移動平均・ボリンジャーバンド・MACD指標・RSI指標・RCI指標が確認できます</h2>
+    <p><a href="{% url 'stockapp:analyze' %}">入力フォームはこちらから</a></p>
+</div>
+{% endblock %}

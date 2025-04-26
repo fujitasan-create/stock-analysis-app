@@ -1,0 +1,24 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block body %}
+<div class="form-container">
+    <h1>銘柄名・開始日・終了日を入力してください</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button tyoe="submit">分析</button>
+    </form>
+
+    {% if result %}
+        <p>{{ result }}</p>
+    {% endif %}
+
+    {% if chart_path %}
+        <h2>株価チャートとテクニカル指標グラフ</h2>
+        <img src="{% static chart_path %}" alt="株価チャート" style="max-width: 100%; height: auto;">
+    {% endif %}
+
+    <p><a href="{% url 'stockapp:index' %}">トップに戻る</a></p>
+</div>
+
+{% endblock %}
